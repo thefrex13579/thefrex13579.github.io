@@ -26,26 +26,59 @@ input.forEach((input) => {
     input.addEventListener("blur", bluerfunc);
 });
 
-function updateDocInput() {
-    const docType = document.getElementById('docType').value;
-    const prefix = docType === 'cedula' ? 'R-' : 'P-';
+// Insertar el select y el input dinámicamente usando innerHTML
+const select_document = document.getElementById('select_document');
+select_document.innerHTML = `
+    <label class="select_doc" for="docType">Tipo de Documento:</label>
+    <select id="docType" name="docType">
+        <option value="cedula">Rut</option>
+        <option value="pasaporte">Pasaporte</option>
+    </select>
 
-    document.getElementById('docInputContainer').innerHTML = `
-        <label for="document"></label>
-        <input type="text" id="document" name="name" class="input" value="${prefix}" maxlength="11" required>
-    `;
+    <div class="input-container" id="docInputContainer">
+    <label for="document"></label>
+    <input type="text" id="document" name="name" class="input" maxlength="15" required/>
+    </div>
+
+`;
+
+// Inicializar prefijo para "Cédula"
+let prefix = 'R-';
+
+// Función para actualizar el prefijo según el tipo de documento seleccionado
+document.getElementById('docType').addEventListener('change', function () {
+    const docType = this.value;
     
-    const docInput = document.getElementById('document');
+    if (docType === 'cedula') {
+        prefix = 'R-';
+    } else if (docType === 'pasaporte') {
+        prefix = 'P-';
+    }
 
-    // Evitar que el usuario borre el prefijo
-    docInput.addEventListener('input', function() {
-        if (!this.value.startsWith(prefix)) {
-            this.value = prefix;
-        }
-    });
+    // Resetear el input y mostrar el nuevo prefijo
+    document.getElementById('document').value = prefix;
+});
 
-}
-updateDocInput();
+// Añadir el evento de formato de número
+document.getElementById('document').addEventListener('input', function (e) {
+    let value = e.target.value;
+    
+    // Remover el prefijo existente para procesar solo los números
+    value = value.replace(prefix, '');
+    
+    // Eliminar cualquier carácter que no sea número
+    value = value.replace(/[^0-9]/g, '');
+    
+    // Agregar guiones cada 3 dígitos
+    if (value.length > 3 && value.length <= 6) {
+        value = value.slice(0, 3) + '.' + value.slice(3);
+    } else if (value.length > 6) {
+        value = value.slice(0, 3) + '.' + value.slice(3, 6) + '.' + value.slice(6, 9);
+    }
+    
+    // Mostrar el valor con el prefijo actualizado
+    e.target.value = prefix + value;
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     const numerocelInput = document.getElementById('numerocelInput');
@@ -123,7 +156,4 @@ function submitForm() {
     })
     .catch(error => console.error('Error:', error));
 }
-
-// Inicializar el prefijo en el campo del documento al cargar la página
-window.onload = updateDocInput;
 

@@ -35,7 +35,7 @@
             <li class = "list active">
                 <a href="../Con_enlinea/consulta_medica.html">
                     <span class = "icon">
-                        <i class="fa-solid fa-hospital"></i>
+                        <i class="fa-solid fa-user-doctor"></i>
                     </span>
                     <span class = "title">Consulta Medica</span>
                 </a>
@@ -53,7 +53,7 @@
             <li class = "list">
                 <a href="../proced_oftal/procedimientos.html">
                     <span class = "icon">
-                        <i class="fa-solid fa-user-doctor"></i>
+                        <i class="fa-solid fa-hospital-user"></i>
                     </span>
                     <span class = "title">Procedimientos Oftal</span>
                 </a>
@@ -98,14 +98,7 @@
                         
                         <form id="reservaForm" method="POST" action="guardar_reserva.php">
                             <h3 class="titl">Datos de Paciente</h3>
-                            <div class="select_document">
-                                <label class="select_doc" for="docType">Tipo de Documento:</label>
-                                <select id="docType" name="docType" onchange="updateDocInput()">
-                                    <option value="cedula">Rut</option>
-                                    <option value="pasaporte">Pasaporte</option>
-                                </select>
-                            </div>
-                            <div class="input-container" id="docInputContainer">
+                            <div class="select_document" id="select_document">
                                 <!-- Los datos se cargan desde JS -->
                             </div>
                             <div class="input-container">
@@ -134,7 +127,6 @@
                                 <label for="hombre">Hombre</label>
                                 <input type="radio" name="genero" class="input" id="mujer" value="Mujer">
                                 <label for="mujer">Mujer</label>
-                                <input type="file" class="input_file">
                             </div>
                             <div class="cont_dias">
                                 <label class="select_dia" for="dia">Selecciona un día:</label>
