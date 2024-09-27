@@ -32,7 +32,7 @@ function updateDocInput() {
 
     document.getElementById('docInputContainer').innerHTML = `
         <label for="document"></label>
-        <input type="text" id="document" name="name" class="input" value="${prefix}" maxlength="10" required>
+        <input type="text" id="document" name="name" class="input" value="${prefix}" maxlength="11" required>
     `;
     
     const docInput = document.getElementById('document');
