@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospial</title>
+    <link rel = "stylesheet" type = "text/css" href = "./inicio_sesion.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bbcd40a30d.js" crossorigin="anonymous"></script>
+   
+</head>
+<body id="body">
+    <header>
+        <div class="icon_menu">
+            <i class="fa-solid fa-bars" id="bton_open"></i>
+        </div>
+        <div class="logo">
+            <div class="imglogo">
+                <img src="../IMG/logo.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <div class="navg" id="navg">
+        <ul>
+            <li class="list">
+                <a href="../index.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="title">Inicio</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Con_enlinea/consulta_medica.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-hospital"></i>
+                    </span>
+                    <span class="title">Consulta Medica</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../exam_oftal/examenes_oftal.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
+                    <span class="title">Examenes Oftalmologicos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../proced_oftal/procedimientos.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </span>
+                    <span class="title">Procedimientos Oftal</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../opt_oftal/optica_lentes.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-glasses"></i>
+                    </span>
+                    <span class="title">Optica</span>
+                </a>
+            </li>
+            <li class="list active">
+                <a href="../inic_oftal/inicio_sesion.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </span>
+                    <span class="title">Inicio de Sesión</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="container">
+            <h1>Iniciar Sesión</h1>
+            <form id="loginForm" action="login.php" method="POST">
+                <div class="button-container">
+                    <input type="radio" id="doctores_especialistas" name="role" value="doctores_especialistas" required>
+                    <label for="doctores_especialistas" class="role-button">Doctores Especialistas</label>
+    
+                    <input type="radio" id="administracion" name="role" value="administracion" required>
+                    <label for="administracion" class="role-button">Administración</label>
+    
+                    <input type="radio" id="doctores" name="role" value="doctores" required>
+                    <label for="doctores" class="role-button">Doctores</label>
+                </div>
+                <div class="input-container">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+
+    </main>
+
+<script src = "./inicio_sesion.js"></script>
+</body>
+</html>

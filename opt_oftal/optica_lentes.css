@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    width: calc(100% - 75px); 
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    background-color: #fff; 
+    border-bottom: 1px solid #ddd; 
+}
+
+body{
+    min-height: 100%;
+    background: #fff;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.navg{
+    border-left: 5px solid blue;
+    box-sizing: initial;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: blue;
+    width: 75px;
+    border-radius: 10px;
+    z-index: 150;
+}
+
+.navg::-webkit-scrollbar{
+    display: none;
+}
+
+.navg{
+    scrollbar-width: none;
+}
+
+.navg ul{
+    padding-top: 40px;
+    padding-left: 5px;
+}
+
+.navg ul li{
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px
+}
+
+.navg ul li.active{
+    background-color: #fff;
+}
+
+.navg ul li a{
+    width: 100%;
+    position: relative;
+    display: block;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navg ul li.active a{
+    color: black;
+}
+
+.navg ul li a .icon{
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navg ul li a .title{
+    padding-left: 10px;
+    white-space: nowrap;
+    font-size: 1.05rem; 
+    line-height: 3.5; 
+    word-wrap: break-word; 
+    margin: 0; 
+
+}
+
+body header .icon_menu i{
+    cursor: pointer;
+}
+
+.icon_menu{
+    position: fixed;
+    font-size: 20px;
+    width: 250px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 65px;
+    justify-content: left;
+    padding: 20px;
+    align-items: center;
+    background: #fff;
+    margin-top: -10px;
+}
+
+.navg ul li a .icon i{
+    font-size: 1.5rem;
+}
+
+.body_move{
+    margin-left: 265px;
+}
+
+.navg_side_move{
+    width: 260px;
+}
+
+header .logo .imglogo img{
+    height: 60px;
+    position: relative;
+    z-index: 400;
+    margin-left: 56px;
+}
+
+main{
+    padding: 20px;
+}
+
+.header_gallery{
+    margin-top: -1.5rem;
+    background-color: #007BFF;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.header_gallery h1{
+    margin: 0;
+}
+
+.body_optica{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px;
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.card{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    width: 260px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.image-container{
+    position: relative;
+    width: 260px; 
+    height: 200px; 
+    margin-left: -8.1rem;
+}
+
+.image-container img{
+    width: 100%; 
+    height: 100%; 
+}
+
+.image{
+    position: absolute;
+    width: 100px;
+    height:100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.front{
+    opacity: 1;
+}
+
+.side{
+    opacity: 0;
+}
+
+.card:hover .front{
+    opacity: 0;
+}
+
+.card:hover .side{
+    opacity: 1;
+}
+
+h3{
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: black;
+}
+
+p{
+    color: black;
+    font-size: 1em;
+    padding: 0 20px 20px;
+}
