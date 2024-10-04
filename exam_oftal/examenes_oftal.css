@@ -1,3 +1,4 @@
+/*==================================BASE===============================*/
 *{
     margin: 0;
     padding: 0;
@@ -5,18 +6,20 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/*==================================HEADER===============================*/
 header{
-    width: calc(100% - 75px);
+    width: calc(100% - 75px); 
     height: 60px;
     display: flex;
     align-items: center;
     position: fixed;
     top: 0;
-    z-index: 500;
+    z-index: 200;
     background-color: #fff; 
     border-bottom: 1px solid #ddd; 
 }
 
+/*==================================BODY===============================*/
 body{
     min-height: 100%;
     background: #fff;
@@ -24,11 +27,7 @@ body{
     margin-top: 80px;
 }
 
-main{
-    padding: 20px;
-    margin-left: 0; 
-}
-
+/*==================================NAV===============================*/
 .navg{
     border-left: 5px solid blue;
     box-sizing: initial;
@@ -42,6 +41,7 @@ main{
     width: 75px;
     border-radius: 10px;
     z-index: 150;
+    height: 100%;
 }
 
 .navg::-webkit-scrollbar{
@@ -95,7 +95,6 @@ main{
     line-height: 3.5; 
     word-wrap: break-word; 
     margin: 0; 
-
 }
 
 body header .icon_menu i{
@@ -137,17 +136,65 @@ header .logo .imglogo img{
     margin-left: 56px;
 }
 
+@media screen and (max-width: 767px){
+    header{
+        width: calc(100% - 50px); 
+    }
+    body{
+        min-height: 100%;
+        background: #fff;
+        margin-left: 60px;
+        margin-top: 60px;
+    }
+    .navg{
+        width: 50px;
+    }
+    .navg ul{
+        padding-top: 30px;
+        padding-left: 5px;
+    }
+    .navg ul li{
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px
+    }
+    .navg ul li a .icon{
+        min-width: 40px;
+        height: 60px;
+    }
+    .navg ul li a .title{
+        font-size: 0.70rem; 
+        line-height: 1; 
+        white-space: normal;
+        margin-top: 20px;
+    }
+    .navg ul li a .icon i{
+        font-size: 1.3rem;
+    }
+    header .logo .imglogo img{
+        height: 50px;
+    }
+
+    .body_move{
+        margin-left: 155px;
+    }
+    .navg_side_move{
+        width: 150px;
+    }
+}
+
+/*==================================MAIN===============================*/
 main{
-    margin-top: -20px;
+    margin-top: 6.4rem;
     padding: 0;
     box-sizing: border-box;
 }
-
+/*==================================CONTAINER===============================*/
 .container{
     position: relative;
     width: 100%;
     min-height: 500px;
-    padding: 2rem;
+    padding: 1rem;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -163,6 +210,11 @@ main{
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.contact_info{
+    background-color: #386fb6;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
 }
 
 .contact_form{
@@ -202,11 +254,6 @@ main{
     left: -13px;
 }
 
-.contact_info{
-    background-color: #386fb6;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
-}
-
 .contact_form .formulario_en{
     padding: 2.3rem 2.2rem;
     z-index: 10;
@@ -220,6 +267,14 @@ main{
     font-size: 35px;
     line-height: 1;
     margin-bottom: 1.5rem;
+}
+
+.list_exam{
+    position: relative;
+    background-color: #fff;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .input-container{
@@ -336,14 +391,6 @@ main{
     justify-content: center;
     align-items: center;
     display: flex;
-}
-
-.list_exam{
-    position: relative;
-    background-color: #fff;
-    max-width: 300px;
-    width: 100%;
-    border-radius: 10px;
 }
 
 .list_exam ul{
@@ -489,19 +536,20 @@ main{
     .form{
         grid-template-columns: 1fr;
         height: 100%;
+    }    
+    .container{
+        margin-top: -2.5rem;
+        margin-left: -0.2rem;
     }
-
     .contact_info .title{
         font-size: 30px;
         color: #fff;
     }
-
     .contact_info .text{
         color: #fff;
         margin: 1rem 0 1rem 0;
         font-size: 14px;
     }
-
     .titl{
         color: #fff;
         font-weight: 500;
@@ -509,7 +557,23 @@ main{
         line-height: 1;
         margin-bottom: 1.5rem;
     }
+}
 
+@media screen and (max-width: 767px){
+    .container{
+        margin-top: -2.5rem;
+        margin-left: -0.2rem;
+    }
+    .titl{
+        font-size: 40px;
+    }
+    .list_exam{
+        position: relative;
+        background-color: #fff;
+        max-width: 300px;
+        width: 100%;
+        border-radius: 10px;
+    }
     .list_exam ul li label p{
         position: absolute;
         font-size: 12px;

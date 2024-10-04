@@ -1,3 +1,4 @@
+/*==================================BASE===============================*/
 *{
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/*==================================HEADER===============================*/
 header{
     width: calc(100% - 75px); 
     height: 60px;
@@ -17,6 +19,7 @@ header{
     border-bottom: 1px solid #ddd; 
 }
 
+/*==================================BODY===============================*/
 body{
     min-height: 100%;
     background: #fff;
@@ -24,11 +27,7 @@ body{
     margin-top: 80px;
 }
 
-main{
-    padding: 20px;
-    margin-left: 0; 
-}
-
+/*==================================NAV===============================*/
 .navg{
     border-left: 5px solid blue;
     box-sizing: initial;
@@ -42,6 +41,7 @@ main{
     width: 75px;
     border-radius: 10px;
     z-index: 150;
+    height: 100%;
 }
 
 .navg::-webkit-scrollbar{
@@ -95,7 +95,6 @@ main{
     line-height: 3.5; 
     word-wrap: break-word; 
     margin: 0; 
-
 }
 
 body header .icon_menu i{
@@ -133,10 +132,58 @@ body header .icon_menu i{
 header .logo .imglogo img{
     height: 60px;
     position: relative;
-    z-index: 100;
+    z-index: 400;
     margin-left: 56px;
 }
 
+@media screen and (max-width: 767px){
+    header{
+        width: calc(100% - 50px); 
+    }
+    body{
+        min-height: 100%;
+        background: #fff;
+        margin-left: 60px;
+        margin-top: 60px;
+    }
+    .navg{
+        width: 50px;
+    }
+    .navg ul{
+        padding-top: 30px;
+        padding-left: 5px;
+    }
+    .navg ul li{
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px
+    }
+    .navg ul li a .icon{
+        min-width: 40px;
+        height: 60px;
+    }
+    .navg ul li a .title{
+        font-size: 0.70rem; 
+        line-height: 1; 
+        white-space: normal;
+        margin-top: 20px;
+    }
+    .navg ul li a .icon i{
+        font-size: 1.3rem;
+    }
+    header .logo .imglogo img{
+        height: 50px;
+    }
+
+    .body_move{
+        margin-left: 155px;
+    }
+    .navg_side_move{
+        width: 150px;
+    }
+}
+
+/*==================================MAIN===============================*/
 main{
     margin: 0;
     padding: 0;
@@ -148,6 +195,7 @@ main{
     transition: .2s linear;
 }
 
+/*==================================CONTAINER===============================*/
 .contenedor_oftal{
     padding: 10px 35px;
     padding-bottom: 100px;
@@ -203,6 +251,30 @@ main{
 .contenedor_oftal .contenedor_box .box:hover{
     box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
     transform: scale(1.02);
+}
+
+@media screen and (max-width: 767px){
+    .contenedor_oftal .contenedor_box{
+        margin-left: 3rem;
+    }
+    .contenedor_oftal .contenedor_box .box{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        border-radius: 5px;
+        background: gainsboro;
+        text-align: center;
+        padding: 30px 20px;
+        max-width: 200px;
+        height: auto;
+    }
+    .contenedor_oftal .contenedor_box .box .bton{
+        font-size: 13px;
+    }
+    .contenedor_oftal .contenedor_box .box i{
+        font-size: 27px;
+    }
+    .contenedor_oftal .contenedor_box .box h3{
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 1076px){
